@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business | Rusimbi William</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="background" id="background"></div>
+<header>
+  <div class="container">
+    <h2>Rusimbi William</h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="experience.html">Experience</a>
+      <a href="comparative.html">Comparative</a>
+      <a href="offering.html">Offering</a>
+      <a href="business.html">Business</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="research.html">Research</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<section>
+  <h1>Business & Partnerships</h1>
+  <p>Explore collaborations, partnerships, and professional engagements.</p>
+  <div class="card">
+    <h3>Collaborative Projects</h3>
+    <p>Worked with architectural firms and tech companies to develop sustainable solutions.</p>
+  </div>
+  <div class="card">
+    <h3>Consulting Partnerships</h3>
+    <p>Providing digital building technology consulting services to improve efficiency and sustainability.</p>
+  </div>
+  <div class="card">
+<h3>co-founder of f3agritech</h3>
+<p>Tech support in operations and internet service efficient productivity.We are offering job opportunities for 
+    <ul>
+        <li>Accountant with marketing manager</li>
+        <li>Operations officer</li>
+        <li>field officer</li>
+    </ul></p>
+
+</div>
+</section>
+<footer>
+<p>© <span id="year"></span> Rusimbi William</p>
+</footer>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+const bg = document.getElementById('background');
+const codeLines = ['def optimize_building():','for sensor in sensors:','if temp > 28:','adjust_cooling()','energy_efficiency = 95%','data.stream()','run_simulation()','import numpy as np','console.log("Building AI running...")','analyze_energy_model()'];
+for (let i=0;i<30;i++) {
+  const el = document.createElement('div');
+  el.classList.add('code-line');
+  el.style.left = Math.random()*100+'vw';
+  el.style.top = Math.random()*100+'vh';
+  el.style.animationDuration = (15+Math.random()*10)+'s';
+  el.textContent = codeLines[Math.floor(Math.random()*codeLines.length)];
+  bg.appendChild(el);
+}
+const animals = ['🦁','🦉','🐺'];
+for (let i=0;i<5;i++) {
+  const el = document.createElement('div');
+  el.classList.add('animal');
+  el.style.left = Math.random()*100+'vw';
+  el.style.top = Math.random()*100+'vh';
+  el.style.fontSize = 50 + Math.random()*50 + 'px';
+  el.style.animationDuration = (20+Math.random()*10)+'s';
+  el.textContent = animals[Math.floor(Math.random()*animals.length)];
+  bg.appendChild(el);
+}
+</script>
+</body>
+</html>

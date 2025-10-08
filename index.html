@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home | Rusimbi William</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Background animations -->
+<div class="background" id="background"></div>
+
+<!-- Header -->
+<header>
+  <h2>Rusimbi William</h2>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="experience.html">Experience</a>
+    <a href="comparative.html">Comparative</a>
+    <a href="offering.html">Offering</a>
+    <a href="business.html">Business</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="research.html">Research</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section id="hero" class="hero">
+  <div>
+    <h1>Rusimbi William</h1>
+    <h3>Software Developer & Building Technology Researcher</h3>
+    <p>Integrating digital technologies into building science and sustainable design with innovation and precision.</p>
+    <div class="skills">
+      <span>Python</span>
+      <span>Problem Solving</span>
+      <span>Data Analysis</span>
+      <span>Building Performance</span>
+      <span>Sustainable Design</span>
+    </div>
+    <p><a href="contact.html" class="btn">Contact Me</a></p>
+  </div>
+  <img src="./images/WhatsApp Image 2025-09-10 at 6.21.05 AM - Copy.jpeg" class="hero-img">
+</section>
+
+<!-- Highlighted Projects -->
+<section id="projects">
+  <h2>Highlighted Projects</h2>
+  <div class="card-container">
+    <div class="project-card">
+      <h3>Building Performance Dashboard</h3>
+      <p>Real-time energy and sensor data dashboard for efficient building management.</p>
+    </div>
+    <div class="project-card">
+      <h3>BIM Automation Toolkit</h3>
+      <p>Automation suite for BIM workflow efficiency and accuracy improvement.</p>
+    </div>
+    <div class="project-card">
+      <h3>Adaptive Facade Prototype</h3>
+      <p>IoT-enabled facade adjusting lighting and ventilation for energy efficiency.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Research Section -->
+<section id="research" class="card">
+  <h2>Research & Interests</h2>
+  <p>Exploring AI, IoT, and automation to transform sustainable architecture.</p>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="card">
+  <h2>Get In Touch</h2>
+  <form id="contactForm" class="contact-form">
+    <label for="name">Name</label>
+    <input type="text" id="name" placeholder="Your name" required>
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="you@example.com" required>
+    <label for="message">Message</label>
+    <textarea id="message" rows="5" placeholder="Your message..." required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© <span id="year"></span> Rusimbi William</p>
+</footer>
+
+<!-- Scripts -->
+<script>
+// Update year dynamically
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Contact form submission
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+  const mailto = `mailto:rusimbiwilliam@gmail.com?subject=Portfolio Contact from ${name}&body=${encodeURIComponent(message)}%0D%0AFrom:%20${email}`;
+  window.location.href = mailto;
+});
+
+// Background flowing code
+const bg = document.getElementById('background');
+const codeLines = [
+  'def optimize_building():',
+  'for sensor in sensors:',
+  'if temp > 28:',
+  'adjust_cooling()',
+  'energy_efficiency = 95%',
+  'data.stream()',
+  'run_simulation()',
+  'import numpy as np',
+  'console.log("Building AI running...")',
+  'analyze_energy_model()'
+];
+for (let i=0;i<30;i++) {
+  const el = document.createElement('div');
+  el.classList.add('code-line');
+  el.style.left = Math.random()*100+'vw';
+  el.style.top = Math.random()*100+'vh';
+  el.style.animationDuration = (15+Math.random()*10)+'s';
+  el.textContent = codeLines[Math.floor(Math.random()*codeLines.length)];
+  bg.appendChild(el);
+}
+
+// Floating business animals
+const animals = ['🦁','🦉','🐺'];
+for (let i=0;i<5;i++) {
+  const el = document.createElement('div');
+  el.classList.add('animal');
+  el.style.left = Math.random()*100+'vw';
+  el.style.top = Math.random()*100+'vh';
+  el.style.fontSize = 50 + Math.random()*50 + 'px';
+  el.style.animationDuration = (20+Math.random()*10)+'s';
+  el.textContent = animals[Math.floor(Math.random()*animals.length)];
+  bg.appendChild(el);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Rusimbi William</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="background" id="background"></div>
+<header>
+  <div class="container">
+    <h2>Rusimbi William</h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="experience.html">Experience</a>
+      <a href="comparative.html">Comparative</a>
+      <a href="offering.html">Offering</a>
+      <a href="business.html">Business</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="research.html">Research</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<section>
+  <h1>Contact Me</h1>
+  <p>Get in touch for collaborations, projects, or inquiries.</p>
+  <form id="contactForm" class="contact-form">
+    <label for="name">Name</label>
+    <input type="text" id="name" placeholder="Your Name" required>
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="you@example.com" required>
+    <label for="message">Message</label>
+    <textarea id="message" rows="5" placeholder="Your message..." required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+<footer>
+<p>© <span id="year"></span> Rusimbi William</p>
+</footer>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+  const mailto = `mailto:rusimbiwilliam@gmail.com?subject=Portfolio Contact from ${name}&body=${encodeURIComponent(message)}%0D%0AFrom:%20${email}`;
+  window.location.href = mailto;
+});
+
+const bg = document.getElementById('background');
+const codeLines = ['def optimize_building():','for sensor in sensors:','if temp > 28:','adjust_cooling()','energy_efficiency = 95%','data.stream()','run_simulation()','import numpy as np','console.log("Building AI running...")','analyze_energy_model()'];
+for (let i=0;i<30;i++) {
+  const el = document.createElement('div');
+  el.classList.add('code-line');
+  el.style.left = Math.random()*100+'vw';
+  el.style.top = Math.random()*100+'vh';
+  el.style.animationDuration = (15+Math.random()*10)+'s';
+  el.textContent = codeLines[Math.floor(Math.random()*codeLines.length)];
+  bg.appendChild(el);
+}
+const animals = ['🦁','🦉','🐺'];
+for (let i=0;i<5;i++) {
+  const el = document.createElement('div');
+  el.classList.add('animal');
+  el.style.left = Math.random()*100+'vw';
+  el.style.top = Math.random()*100+'vh';
+  el.style.fontSize = 50 + Math.random()*50 + 'px';
+  el.style.animationDuration = (20+Math.random()*10)+'s';
+  el.textContent = animals[Math.floor(Math.random()*animals.length)];
+  bg.appendChild(el);
+}
+</script>
+</body>
+</html>
