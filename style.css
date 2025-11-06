@@ -24,7 +24,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -60,7 +60,7 @@ header nav a:hover, header nav a.active {
   margin: auto;
   flex-wrap: wrap;
 }
-.hero div {
+.hero-text {
   max-width: 600px;
 }
 .hero h1 {
@@ -95,9 +95,11 @@ header nav a:hover, header nav a.active {
   background: #009688;
   transform: scale(1.05);
 }
+.hero-img-container {
+  max-width: 400px;
+}
 .hero-img {
   width: 100%;
-  max-width: 400px;
   border-radius: 15px;
   border: 3px solid #009688;
   animation: floatImage 5s ease-in-out infinite;
@@ -117,7 +119,7 @@ h2 {
   color: #00695c;
   text-align: center;
 }
-.card, .project-card {
+.card, .project-card, .highlight {
   background: #fff;
   color: #222;
   padding: 1.5rem;
@@ -135,9 +137,16 @@ h2 {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
-.project-card {
-  flex: 1;
-  min-width: 280px;
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+.skills-grid h4 {
+  color: #009688;
+  margin-bottom: 0.5rem;
 }
 
 /* =========================
@@ -198,44 +207,26 @@ footer {
   z-index: -1;
   overflow: hidden;
 }
-.code-line {
+.dot {
   position: absolute;
-  color: #00bcd4;
-  font-family: monospace;
-  white-space: nowrap;
-  user-select: none;
-  opacity: 0.5;
-  font-size: 0.8rem;
-  animation-name: floatCode;
+  width: 6px;
+  height: 6px;
+  background: #009688;
+  border-radius: 50%;
+  opacity: 0.4;
+  animation-name: floatDot;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-.animal {
-  position: absolute;
-  font-size: 40px;
-  user-select: none;
-  opacity: 0.5;
-  animation-name: floatAnimal;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+@keyframes floatDot {
+  0% { transform: translateY(-10%); opacity:0; }
+  50% { opacity:0.4; }
+  100% { transform: translateY(110%); opacity:0; }
 }
 
 /* =========================
    Animations
 ========================= */
-@keyframes floatCode {
-  0% { transform: translateY(-10%); opacity:0; }
-  50% { opacity:0.5; }
-  100% { transform: translateY(110%); opacity:0; }
-}
-@keyframes floatAnimal {
-  0% { transform: translateY(-10%); }
-  100% { transform: translateY(110%); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
 @keyframes slideUp {
   from { opacity:0; transform: translateY(30px);}
   to { opacity:1; transform: translateY(0);}
@@ -250,7 +241,8 @@ footer {
 ========================= */
 @media (max-width: 768px) {
   .hero { flex-direction: column; text-align: center; }
-  .hero-img { margin-top: 2rem; max-width: 200px; }
+  .hero-img-container { margin-top: 2rem; max-width: 200px; }
   header nav a { margin-left: 1rem; font-size: 0.9rem; }
   .card-container { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr; }
 }
